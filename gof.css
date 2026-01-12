@@ -1,94 +1,63 @@
-body{
-    padding: 0; background-image: url(jbareham_201201_ecl1050_goty_2020_top_50_02.0.jpg); 
-    margin: 0; background-repeat: no-repeat;background-size: 1600px  280px; margin-top: 2cm;} 
-    ul{
-       list-style-type: none;
-       background-color:#210e0e;background-position: top; margin-bottom: -3cm;
-       color: white; margin: 0px; border-radius: 3cm; border-style:double; border-color: greenyellow;margin-top: -1cm; height: 57px;}
-    ul li{
-     display: inline-block; padding: 30px; transition: 0.2s; margin-left: 50px; margin-top: -0.22cm;
-    }
-    ul li button{
-    background-color: blueviolet; height:35px;margin-top: -35px; width: 100px;font-size: larger; color: white; transition-duration: 0.4s;
-    transition-property: all;
-    }
-    ul li button:hover{
-    background-color: aquamarine; border-radius: 20px; color: black;
-    }
-    ul li:hover .dropdown{
-    display: block; position: absolute;margin-left: -0.6cm;margin-top: 0.55cm; 
-    }
-    #back{
-        background-image: url(1000_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg);width: auto;height:auto;margin-top: -20px;display: flex;justify-content: center;margin-top: 1px;
-    }
-    .container{
-        background-color:white; width: 1200px ;height: auto; margin-top:1px; text-transform: capitalize;
-    }
-    .ima img{
-        width: 700px;height: 400px; margin-left:250px; }
-    p{
-        font-style:normal; font-weight: 200; font-size: larger; text-transform: uppercase; color: black; font-family: serif;font-weight: 500; width: 1120px;margin-left: 30px;
-    }   
-    .para ol{
-        list-style-type: none; font-size: larger; margin-left: -10px;
-    } 
-    table,tr th,td{
-        border: 1px solid white; border-collapse: collapse; padding: 10px;background-color: black; color: white;margin-left: 300px;
-    }
-    table{
-        height: 272px;
-    }
-    #h{
-        margin-left: 30px; font-size:25px;
-    }
-    #way ol{
-    font-size:larger;
-    }
-     #f{
-        text-align: center;
-     }   
-    h4{
-        text-align: center;font-size: larger;
-    }
-    h4 a:hover{
-        color: blue;
-    }
-    .f2 img{
-        width: 200px;height: 100px;
-    }
-    #p2{
-        margin-left: -2px; width: 200px; font-style: normal;font-size: medium; text-transform: initial;color: white; 
-    } 
-    .first{
-        border: 0.5px white solid; background-color: black; margin-right: 30px; border-radius: 0px 0px 0px 10px;}
-    #hea{
-        width: 200px;
-    }
- #hea :hover{
- color: white;
- }
- #hea :visited{
-    color: white;
- }
- #head2{
-    color:purple;  cursor: pointer;
- }
- #head2 :hover{
-    color: blueviolet;
- }
- #head2:visited{
-    color:red;
- }
+/* Animation for Toast Notifications */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
 
- #fi{
-    list-style-type: none; display: inline-block;
- }
- #fiii{
-       display: inline-block; padding-left: auto;padding-top:auto; padding-bottom: auto; padding-right: auto; background-color: red; width:130px; height: 31px; margin-left: 25px;transition-duration: 0.5s;transition-property:border-radius;color: white; margin-top: auto;margin-bottom: auto; border-radius: 5px;
- }
- #fiii:hover{
-    background-color:greenyellow; color: Red; border-radius: 20px;}
-    .footer2{
-        height: 60px; background-color: Black; color: white;width:1347p}
-        .footer{
-            margin-left: 30px; display: flex; flex-wrap: wrap; justify-content: space-between;float: left;}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.toast {
+    animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toast.hiding {
+    animation: fadeOut 0.3s forwards;
+}
+
+/* Feature Card Hover Effects */
+.feature-card {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    filter: brightness(1.2);
+}
+
+.icon-red { color: #ef4444; }
+
+/* Auth Input Styling */
+.auth-input {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.auth-input:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+.dark .auth-input {
+    background: #0f172a;
+    border-color: #334155;
+    color: white;
+}
+
+/* View Transition */
+.view-section { display: none; }
+.view-active { display: block; animation: fadeIn 0.4s ease; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
